@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number Locator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Phone Number Locator</h1>
+    <form method="post">
+        <label for="number">Enter phone number with country code:</label>
+        <input type="text" id="number" name="number" required>
+        <button type="submit">Locate</button>
+    </form>
+    <div id="map">{{ map_html | safe }}</div>
+    <div id="info">
+        <h2>Location Information</h2>
+        <p>Location: {{ location }}</p>
+        <p>Carrier: {{ carrier_name }}</p>
+        <p>Timezone: {{ timezones }}</p>
+        <p>Detailed Location: {{ detailed_location_info }}</p>
+    </div>
+</body>
+</html>
