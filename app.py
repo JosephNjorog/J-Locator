@@ -23,7 +23,6 @@ def index():
     timezones = ''
     map_html = ''
     detailed_location_info = ''
-
     if request.method == 'POST':
         number = request.form.get('number')
         try:
